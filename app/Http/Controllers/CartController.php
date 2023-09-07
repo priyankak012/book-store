@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 Use App\Models\order;
-use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 
 class CartController extends Controller
@@ -23,6 +25,7 @@ class CartController extends Controller
 
 
         return view('cartlist', ['books' => $books]);
+        return redirect()->back()->withSuccess('IT WORKS!');
     }
 
     public function removecart($id)
@@ -54,13 +57,60 @@ class CartController extends Controller
           $order->user_id = $cart['user_id'];
           $order->status = "pending";
           $order->pyment_method = $request->payment;
-          $order->payment_status="pending";
+          $order->payment_status="Complete";
           $order->address= $request->address;
           $order->save();
-         
-
-        //   return "data insert succesfully";
-       
+        //   return "data insert succesfully";  
       }
     }
+    public function showForgetPasswordForm()
+    {
+        return view('forgetpassword');
+
+    }
+
+
+    public function submitForgetPasswordForm(Request $request)
+    { 
+        $request->validate([
+         "email"=>'required|email|exists:registrations',
+        ]);
+
+         $token  = Str::random(length:64);
+
+         Db::table(table:'password_reset_tokens')->insert([
+            'email' => $request->email, 
+              'token' => $token, 
+              'created_at' => Carbon::now()
+        
+         ]);
+
+         Mail::send('forgetpassword', ['token' => $token], function($message) use($request){
+            $message->to($request->email);
+            $message->subject('Reset Password');
+        });
+
+        return back()->with('message', 'We have e-mailed your password reset link!');
+    }
+
+
+
+    public function showResetPasswordForm($token) { 
+        return view('resetpassword', ['token' => $token]);
+     }
+     
+
+     public function submitResetPasswordForm(Request $request)
+     {
+         $request->validate([
+             'email' => 'required|email|exists:registrations',
+             'password' => 'required|string|min:6|confirmed',
+             'password_confirmation' => 'required'
+         ]);
+
+         redirect()->route('forget.password.get');
+
+    }
+    
 }
+

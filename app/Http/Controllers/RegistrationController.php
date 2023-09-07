@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
-
+use Illuminate\Console\View\Components\Alert;
 
 class RegistrationController extends Controller
 {
@@ -19,7 +18,7 @@ class RegistrationController extends Controller
          'phone' => 'required|max:10',
          'password' => 'required|confirmed|min:6',
       ]);
-      
+
       Registration::create([
          'username' => $request->username,
          'email' => $request->email,
@@ -42,9 +41,11 @@ class RegistrationController extends Controller
       $user = registration::where(['email' => $request->email])->first();
 
       if (!$user || !Hash::check($request->password, $user->password)) {
-         return "username and passwords does not match";
+         session()->flash('error');
+         return redirect('/login');
       } else {
          $request->session()->put('user', $user);
+         session()->flash('login_success');
          return redirect()->to('http://127.0.0.1:8000/book');
       }
    }
