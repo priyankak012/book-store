@@ -12,16 +12,61 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Book-store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link animated" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link animated" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Books</a>
+                    </li>
+                </ul>
+                <form class="d-flex" action="/search" method="get">
+                    <input class="form-control me-2" type="text" placeholder="Search"  name="query">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                <form class="d-flex">
+                    @if (Session::has('user'))
+                        <div class="collapse navbar-collapse " id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ Session::get('user')['username'] }}
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="logout">Log out</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    @else
+                        <li><a href="login" class="btn btn-dark"></a></li>
+                    @endif
+                </form>
+            </div>
+        </div>
+    </nav>
 
     <div class="container mt-5">
         <div class="row">
             @foreach ($books as $book)
                 <div class="col-md-4 mb-4">
-                    <img src="{{asset('storage/tLCLz5DR36orgFche7wobpS3XDdwIUvQMzMki4iN.png')}}">
-                    <img src="{{asset('storage/ZhczoQ19jnTGxkIrzYvqEPlAnEmjcS3UKUnipIhq.png')}}" width="60%" height="40%">
                     <div class="card">
-                     
-                    
+                        <a href="{{ route('imagedetail', ['id' => $book['id']]) }}">
+                            <img src="{{ asset($book->image) }}" height="60%" width="40%">
+                        </a>            
                         <div class="card-body">
                             <h5 class="card-title">{{ $book->title }}</h5>
                             <p class="card-text">{{ $book->description }}</p>
@@ -30,20 +75,19 @@
                                     <input type="checkbox" id="book-{{ $book->id }}-like">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-fill"></i>
-                                </label>
-                                <form action="{{ route('addlist') }}" method="post">
+                                </label>  
+                                <form action="{{ route('cartlist') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="book_id" value="{{ $book->id }}">
-                                    <button class="btn btn-dark">Add to Cart</button>
-                                    <a href="home" class="btn btn-outline-primary">Back </a>
-                                    <a href="order" class="btn btn-danger">Buy Now</a>
+                                    <button class="btn btn-dark btn-sm">Add to Cart</button>
+                                    <a href="order" class="btn btn-danger btn-sm">Buy Now</a>
+                                    <a href="home" class="btn btn-outline-primary btn-sm">Back </a>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
-        </div
-</body>
+        </div </body>
 
 </html>
