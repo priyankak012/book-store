@@ -30,15 +30,7 @@ class BookController extends Controller
       'author' => $request->author,
       'description' => $request->description,
       'price' => $request->price,
-      'image' => $imagePath,
-
-
-      $file = $request->file('image'),
-      $extension = $file->getClientOriginalName(),
-      $imageName = time() . '.' . $request->image->extension(),
-      $request->image->move(str_replace('storage','app','images'), $imageName),
-
-
+      'image' =>'storage/'.$imagePath,
     ]);
 
     session()->flash('store');
@@ -53,8 +45,9 @@ class BookController extends Controller
 
   public function view($id)
   {
-    $datas = Book::find($id);
-    return view('cart', ['products' => $datas]);
+    $datas = dd(Book::find($id));
+    return view('cartlist', ['books' => $datas]);
+    // dd($datas);
   }
 
   function addcart(Request $request)
@@ -86,12 +79,5 @@ class BookController extends Controller
     $user_id = Session::get('user')['id'];
     return Cart::where('user_id', $user_id)->count();
   }
-
-  public function  detail($id)
-  {
-
-   $data = Book::find($id);
-   return view('image_details',['books'=>$data]);
-  }
-
+  
 }

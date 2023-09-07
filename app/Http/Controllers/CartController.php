@@ -31,7 +31,11 @@ class CartController extends Controller
     public function removecart($id)
     {
         Cart::destroy($id);
-        Redirect()->to('http://127.0.0.1:8000/cartlist');
+
+        
+      session()->flash('Remove_cart', 'You have Successfully Remove cart');
+      return redirect()->route('cartlist');
+       
     }
 
 
