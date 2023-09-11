@@ -34,7 +34,7 @@ class BookController extends Controller
     ]);
 
     session()->flash('store');
-     return Redirect('bookdetail');
+    return redirect('/index');
   }
 
   public function show()
@@ -45,9 +45,9 @@ class BookController extends Controller
 
   public function view($id)
   {
-    $datas = dd(Book::find($id));
+    $datas = Book::find($id);
     return view('cartlist', ['books' => $datas]);
-    // dd($datas);
+   
   }
 
   function addcart(Request $request)

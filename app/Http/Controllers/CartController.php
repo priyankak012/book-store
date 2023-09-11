@@ -67,54 +67,5 @@ class CartController extends Controller
         //   return "data insert succesfully";  
       }
     }
-    public function showForgetPasswordForm()
-    {
-        return view('forgetpassword');
-
-    }
-
-
-    public function submitForgetPasswordForm(Request $request)
-    { 
-        $request->validate([
-         "email"=>'required|email|exists:registrations',
-        ]);
-
-         $token  = Str::random(length:64);
-
-         Db::table(table:'password_reset_tokens')->insert([
-            'email' => $request->email, 
-              'token' => $token, 
-              'created_at' => Carbon::now()
-        
-         ]);
-
-         Mail::send('forgetpassword', ['token' => $token], function($message) use($request){
-            $message->to($request->email);
-            $message->subject('Reset Password');
-        });
-
-        return back()->with('message', 'We have e-mailed your password reset link!');
-    }
-
-
-
-    public function showResetPasswordForm($token) { 
-        return view('resetpassword', ['token' => $token]);
-     }
-     
-
-     public function submitResetPasswordForm(Request $request)
-     {
-         $request->validate([
-             'email' => 'required|email|exists:registrations',
-             'password' => 'required|string|min:6|confirmed',
-             'password_confirmation' => 'required'
-         ]);
-
-         redirect()->route('forget.password.get');
-
-    }
-    
 }
 
