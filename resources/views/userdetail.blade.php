@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{asset('css/registration.css')}}">  
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <title>Book Store</title>
 </head>
-<!-- Navbar -->
+  <!-- Navbar -->
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -39,14 +40,20 @@
             <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Books</a>
           </li>
         </ul>
-        {{-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" action="/search" method="get">
+          <input class="form-control me-2" type="text" placeholder="Search"  name="query">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> --}}
+        </form>
       </div>
     </div>
 </nav>
 
-@yield('header')
+<h1>Your Oder Confirm</h1>
+<h6>In CodePen, I have made my first website. In this online editor I am learning, trying and coding.<br><br>
+  Now I am updating this portfolio. And some of my sites are on GitHub.
+  </h6>
+  <p style="color: OrangeRed; text-align: center;">____________</p>
+  <section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.5276025806734!2d72.49108597982962!3d23.041111061924834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b43099b75c5%3A0x69dc723377b62b7c!2sSindhu%20Bhavan%20Marg%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1694839391959!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
 </body>
-</html>

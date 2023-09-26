@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 
 <body>
+    {{-- <?php
+    use App\Http\Controllers\BookController;
+    $total = Bookcontroller::cartiteam();
+?> --}}
+
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Book-store</a>
@@ -35,6 +43,8 @@
                     <input class="form-control me-2" type="text" placeholder="Search"  name="query">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
+                  <i class="fa" style="font-size:24px">&#xf07a;</i>
+                  {{-- <span> {{$total}} </span> --}}
                 <form class="d-flex">
                     @if (Session::has('user'))
                         <div class="collapse navbar-collapse " id="navbarNavDarkDropdown">
@@ -58,7 +68,9 @@
             </div>
         </div>
     </nav>
+   <!-- end navbar -->
 
+   <!-- fetch data  display -->
     <div class="container mt-5">
         <div class="row">
             @foreach ($books as $book)
@@ -72,7 +84,8 @@
                             <p class="card-text">{{ $book->description }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <label for="book-{{ $book->id }}-like" class="like-icon-div-child">
-                                    <input type="checkbox" id="book-{{ $book->id }}-like">
+                                  
+                                    
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-fill"></i>
                                 </label>  
@@ -88,6 +101,17 @@
                     </div>
                 </div>
             @endforeach
-        </div </body>
+            </div>
+    </div>
+<!-- end data -->
+<script>
+const likeIcon = document.querySelector('.like-icon-div-child');
 
+likeIcon.addEventListener('click', function() {
+    const heartEmpty = this.querySelector('.heart-empty');
+    heartEmpty.style.color = 'red'; // Change the color to red when clicked
+});
+</script>
+
+</body>
 </html>

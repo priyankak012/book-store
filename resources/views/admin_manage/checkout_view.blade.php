@@ -1,6 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -122,13 +121,6 @@
                                     Dashboard
                                 </a>
                             </li>
-                            <li class="app-sidebar__heading">Add New Records</li>
-                            <li>
-                                <a href="crud_bookdetail" class="mm-active">
-                                    <i class="metismenu-icon pe-7s-rocket"></i>
-                                    New Book Detail
-                                </a>
-                            </li>
                             <li class="app-sidebar__heading">UI Components</li>
                             <li>
                                 <a href="#">
@@ -165,12 +157,6 @@
                                         <a href="book_show">
                                             <i class="metismenu-icon">
                                             </i>Books
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="checkout_show">
-                                            <i class="metismenu-icon">
-                                            </i>Check out
                                         </a>
                                     </li>
                                 </ul>
@@ -218,166 +204,90 @@
                     </div>
                 </div>
             </div>
-            <div class="app-main__outer">
-                <div class="app-main__inner">
-                    <div class="app-page-title">
-                        <div class="page-title-wrapper">
-                            <div class="page-title-heading">
-                                <div class="page-title-icon">
-                                    <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                                    </i>
-                                </div>
-                                <div>Online Book-store
-                                    <div class="page-title-subheading">This is an example dashboard created using
-                                        build-in elements and components.
-                                    </div>
-                                </div>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="card-title">Active Books</h5>
                             </div>
-                            {{-- <h1>Book Count:{{  $total }}</h1> --}}
+                            <div class="card-body">
 
-                            <div class="page-title-actions">
-                                <div class="d-inline-block dropdown">
-                                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                                            <i class="fa fa-business-time fa-w-20"></i>
-                                        </span>
-                                        setting
-                                    </button>
-                                    <div tabindex="-1" role="menu" aria-hidden="true"
-                                        class="dropdown-menu dropdown-menu-right">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a href="profile" class="nav-link">
-                                                    <i class="nav-link-icon lnr-book"></i>
-                                                    <span>
-                                                        profile
-                                                    </span>
-                                                </a>
-                                            </li>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
 
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-midnight-bloom">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total User</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $registration_total }} </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-arielle-smile">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total Books</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $book_totals }} </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-grow-early">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total Order</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $order_total }}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-midnight-bloom">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total User</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $checkout_total }} </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        @foreach ($checkouts as $checkout)
+                                        
+                                            <div class="mb-1">
+                                                <label for="username" class="form-label">Username:</label>
+                                                <input type="text" class="form-control" name="username"
+                                                    value="{{$checkout->username}}">
 
-                    <div class="row p-1">
-                        <div class="col-md-12">
-                            <div class="main-card mb-3 card">
-                                <div class="card-header">Active Books
-                                    <img src="{{ asset('chart 1.png') }}" style="margin-top: 50%" width="45%">
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="email" class="form-label">Email:</label>
+                                                <input type="email" class="form-control" name="email"
+                                                    value="{{$checkout->email}}">
+
+                                            </div>
+
+                                            <div class="mb-1">
+                                                <label for="address" class="form-label">Address:</label>
+                                                <input type="text" class="form-control" name="address"
+                                                    value="{{$checkout->address}}">
+
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="city" class="form-label">City:</label>
+                                                <input type="text" name="city" class="form-control"
+                                                    value="{{ $checkout->city }}">
+
+                                            </div>
+
+                                            <label for="zip" class="form-label">zip:</label>
+                                            <input type="number" class="form-control" name="zip"
+                                                value="{{$checkout->zip }}">
+
+                                            <div class="mb-1">
+                                                <label for="cardnumber" class="form-label">Cardnumber:</label>
+                                                <input type="number" class="form-control" name="cardnumber"
+                                                    value="{{ $checkout->cardnumber }}">
+
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="expmonth" class="form-label">expmonth:</label>
+                                                <input type="text" name="expmonth" class="form-control"
+                                                    value="{{ $checkout->expmonth}}">
+
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="cvv" class="form-label">cvv:</label>
+                                                <input type="number" name="cvv" class="form-control"
+                                                    value="{{ $checkout->cvv }}">
+
+                                            </div>
+                                            <div class="btn-submit  p-1">
+                                                <a href="{{ route('index') }}" class="btn btn-dark"
+                                                    type="submit">Back</a>
+
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="app-container custom-container">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center">
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+            </div>
         </div>
     </div>
-
-    <footer class="section bg-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Information</h6>
-                        <ul class="list-unstyled footer-link mt-4">
-                            <li><a href="">Pages</a></li>
-                            <li><a href="">Our Team</a></li>
-                            <li><a href="">Feuchers</a></li>
-                            <li><a href="">Pricing</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Ressources</h6>
-                        <ul class="list-unstyled footer-link mt-4">
-                            <li><a href="">Monitoring Grader </a></li>
-                            <li><a href="">Video Tutorial</a></li>
-                            <li><a href="">Term &amp; Service</a></li>
-                            <li><a href="">Zeeko API</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Help</h6>
-                        <ul class="list-unstyled footer-link mt-4">
-                            <li><a href="">Sign Up </a></li>
-                            <li><a href="">Login</a></li>
-                            <li><a href="">Terms of Services</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-                <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-                </script>
+   
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
+  
 </body>
 
 </html>

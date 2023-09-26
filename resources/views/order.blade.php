@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{{ asset('css/order.css') }}">
-
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,6 +43,8 @@
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Books</a>
                     </li>
                 </ul>
+                <i class="fa" style="font-size:24px">&#xf07a;</i>
+              
                 <form class="d-flex">
                     @if (Session::has('user'))
                         <div class="collapse navbar-collapse " id="navbarNavDarkDropdown">
@@ -69,13 +68,15 @@
             </div>
         </div>
     </nav>
+<!-- end navbar -->
 
+
+<!-- order form -->
     <div class="card">
         <div class="card-top border-bottom text-center">
             <a href="#"> Back to shop</a>
             <span id="logo">Order Book</span>
         </div>
-        {{-- <img src="{{ asset(str_replace('public','storage', $book->image)) }}"> --}}
         <div class="card-body">
             <div class="row upper">
                 <span><i class="fa fa-check-circle-o"></i> Buy Book</span>
@@ -93,18 +94,23 @@
                                 <img src="https://img.icons8.com/color/48/000000/maestro.png" />
                             </div>
                         </div>
-                        <form action="{{route('orderplace')}}" method="POST">
+                        <form action='orderplace' method="POST">
                             @csrf
-                            
-                            <span class="text-dark">Cardholder's detail:</span>
-                            <input type="text-dark" name="address" value="" placeholder="enter your address">
-
+                             <span class="text-dark">Cardholder's detail:</span>
+                            <input type="text" name="address" class="form-control  @error('address') is-invalid @enderror" placeholder="enter your address">
+                             @error('address')
+                                 <span class="text-danger">{{$message}}</span>
+                             @enderror
+                             <br>
                             <span class="text-dark">Online Pyment:</span>
-                            <input class="form-check-input" type="radio" value="Online Pyment" name="payment">
+                            <input class="form-check-input" type="radio" value="Online Pyment" name="payment" class="@error('payment') is-invalid @enderror">
                             <span class="text-dark"> Emi Pyment:</span>
                             <input class="form-check-input" type="radio" value="EMI payment" name="payment">
                             <span class="text-dark">Cash On delivery:</span>
                             <input class="form-check-input" type="radio" value="Cash on delivery" name="payment">
+                            @error('payment')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
                             <div class="row">
                                 <div class="col-4"><span>Description :</span>
                                     <input placeholder="">
@@ -115,7 +121,7 @@
                             </div>
                             <input type="checkbox" id="save_card" class="align-left">
                             <label for="save_card">Save card details to wallet</label>
-                            <a href="success" class="btn btn-dark" type="submit">Order Confirm !</a>
+                            <button class="btn btn-dark" type="submit">Confirm order </button>
                         </form>
                     </div>
                 </div>
@@ -123,8 +129,7 @@
                     <div class="right border">
                         <div class="header">Order Summary</div>
                         <div class="row item">
-                            <div class="col-4 align-self-center"><img class="img-fluid"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEI87rC3zhvDJDZdAnit0Rg8IQ6rGgxkL2Qg&usqp=CAU">
+                            <div class="col-4 align-self-center">
                             </div>
                             <div class="col-8">
                                 <div class="row text-muted"> “Books are mirrors: you only see in them what you already
@@ -133,6 +138,7 @@
                                 <div class="row">Qty:1</div>
                             </div>
                         </div>
+                        
                         <div class="row lower">
                             <div class="col text-left">Subtotal</div>
                             <div class="col text-right">$ {{ $total }}</div>
@@ -149,13 +155,16 @@
                             <div class="col text-left"><b>Total to pay</b></div>
                             <div class="col text-right"><b> $ {{ $total + 10 + 100 }}</b></div>
                         </div>
-                        <button class="btn">Place order</button>
-                        <p class="text-muted text-center">Complimentary Shipping & Returns</p>
+                        <a href="checkout" class="btn btn-dark">Place order</a>
+                        <p class="">Complimentary Shipping & Returns</p>
+
+                      
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end order form -->
 </body>
-
 </html>

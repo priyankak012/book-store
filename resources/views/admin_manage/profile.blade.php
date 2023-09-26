@@ -2,19 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Language" content="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
-    <meta name="msapplication-tap-highlight" content="no">
-    <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="en">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+        <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
+    </head>
+
+    <body>
         <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
             <div class="app-header header-shadow">
                 <div class="app-header__logo">
@@ -205,7 +215,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>                    
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-12">
@@ -214,54 +224,31 @@
                                     <h5 class="card-title">Active Books</h5>
                                 </div>
                                 <div class="card-body">
-
                                     <div class="col-sm-6">
                                         <div class="card">
                                             <div class="card-body">
-
-                                                <label for="title" class="form-label">Title:</label>
-                                                <input type="text" class="form-control" name="title"
-                                                    value="{{ $books->title }}">
-
                                                 <div class="mb-1">
-                                                    <label for="author" class="form-label">Author:</label>
-                                                    <input type="text" class="form-control" name="author"
-                                                        value="{{ $books->author }}">
-
-                                                </div>
-                                                <div class="mb-1">
-                                                    <label for="description" class="form-label">Description:</label>s
-                                                    <input type="text" name="description" class="form-control"
-                                                        value="{{ $books->description }}">
-
-                                                </div>
-                                                <div class="mb-1">
-                                                    <label for="price" class="form-label">Price:</label>
-                                                    <input type="number" class="form-control" name="price"
-                                                        value="{{ $books->price }}">
-
-                                                </div>
-                                                <div class="mb-1">
-                                                    <img src="{{ asset($books->image) }}" width="30%" height="30%">
-                                                </div>
-
-                                                <div class="btn-submit  p-1">
-                                                    <a href="{{ route('show_data') }}" class="btn btn-dark"
-                                                        type="submit">Back</a>
-
+                                                    <label for="email" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" name="email"
+                                                    value="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-        < /body>  
-        </html>
+
+
+                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
+                    <!-- Include Bootstrap JS (optional) 
+                    -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+
+    </html>

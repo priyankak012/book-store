@@ -48,7 +48,9 @@
       </div>
     </div>
 </nav>
+<!-- Navbar Ended -->
 
+<!-- Carousel Image slidebar -->
         <section>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top:3%">
                 <div class="carousel-indicators">
@@ -95,8 +97,9 @@
                 </button>
               </div>
         </section><br><br><br>
+<!-- Image slider Ended -->
 
-<!-- section -->
+<!--  second section -->
 <section id="book-section" style="">
 <div class="card">
     <h5 class="card">Spirit Walk</h5>
@@ -124,6 +127,9 @@
   </div>
 </section>
 
+<!-- End section -->
+
+<!-- section thirf -->
 <section>
   <div id="header">
     <h1> Visit Book</h1>
@@ -164,6 +170,10 @@
     </div>
 
 </section>
+
+<!-- End third section -->
+
+<!-- footer -->
 <footer class="footer">
   <div class="footer-left col-md-4 col-sm-6">
     <p class="about">
@@ -197,6 +207,8 @@
     <p class="name"> Company Name &copy; 2016</p>
   </div>
 </footer>
+<!-- end footer -->
+
 </body>
     </html>
  

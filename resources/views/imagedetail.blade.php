@@ -9,13 +9,17 @@
 </head>
 
 <body>
+    <!-- Imagedetail -->
     <div class="card">
-        <img src="{{ asset($books->image) }}" alt="" class="card-img">
+        <img src="{{ asset($books->image) }}" class="card-img">
         <div class="card-body">
             <h5 class="card-title">Name: {{ $books['title'] }}</h5>
             <p class="card-text">Description: {{ $books['description'] }}</p>
-            <a href="{{route('index')}}" class="chamoiseeBtn generalBtn"> Back</a>
+            <div class="button-box">
+                <button class="btn btn-dark"><a href="{{route('index')}}">Back</a></button>
+            </div>
         </div>
     </div>
+    <!-- end imagedetail -->
 </body>
 </html>

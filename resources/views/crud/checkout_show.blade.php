@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -49,15 +49,6 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <div class="app-header-left">
-                    <div class="search-wrapper">
-                        <form class="d-flex" action="/search" method="get">
-                            <input class="form-control me-2" type="text" placeholder="Search" name="query">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <button class="close"></button>
-                    </div>
-                </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
@@ -122,13 +113,6 @@
                                     Dashboard
                                 </a>
                             </li>
-                            <li class="app-sidebar__heading">Add New Records</li>
-                            <li>
-                                <a href="crud_bookdetail" class="mm-active">
-                                    <i class="metismenu-icon pe-7s-rocket"></i>
-                                    New Book Detail
-                                </a>
-                            </li>
                             <li class="app-sidebar__heading">UI Components</li>
                             <li>
                                 <a href="#">
@@ -165,12 +149,6 @@
                                         <a href="book_show">
                                             <i class="metismenu-icon">
                                             </i>Books
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="checkout_show">
-                                            <i class="metismenu-icon">
-                                            </i>Check out
                                         </a>
                                     </li>
                                 </ul>
@@ -218,166 +196,94 @@
                     </div>
                 </div>
             </div>
-            <div class="app-main__outer">
-                <div class="app-main__inner">
-                    <div class="app-page-title">
-                        <div class="page-title-wrapper">
-                            <div class="page-title-heading">
-                                <div class="page-title-icon">
-                                    <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                                    </i>
-                                </div>
-                                <div>Online Book-store
-                                    <div class="page-title-subheading">This is an example dashboard created using
-                                        build-in elements and components.
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- <h1>Book Count:{{  $total }}</h1> --}}
-
-                            <div class="page-title-actions">
-                                <div class="d-inline-block dropdown">
-                                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                                        <span class="btn-icon-wrapper pr-2 opacity-7">
-                                            <i class="fa fa-business-time fa-w-20"></i>
-                                        </span>
-                                        setting
-                                    </button>
-                                    <div tabindex="-1" role="menu" aria-hidden="true"
-                                        class="dropdown-menu dropdown-menu-right">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a href="profile" class="nav-link">
-                                                    <i class="nav-link-icon lnr-book"></i>
-                                                    <span>
-                                                        profile
-                                                    </span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="container mt-5">
+                <div class="app-header-left">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container-fluid">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-midnight-bloom">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total User</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $registration_total }} </h3>
-                                    </div>
-                                </div>
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="card-title">Active Books</h5>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-arielle-smile">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total Books</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $book_totals }} </h3>
-                                    </div>
+                            <nav class="navbar navbar-light bg-light">
+                                <div class="container-fluid">
+                            <form class="d-flex">
+                              <input class="form-control me-2" type="search" name="checkout_search">
+                              <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-grow-early">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total Order</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $order_total }}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-midnight-bloom">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total User</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <h3> {{ $checkout_total }} </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row p-1">
-                        <div class="col-md-12">
-                            <div class="main-card mb-3 card">
-                                <div class="card-header">Active Books
-                                    <img src="{{ asset('chart 1.png') }}" style="margin-top: 50%" width="45%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-container custom-container">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center">
-                                </ul>
                             </nav>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th class="text-center">number</th>
+                                                <th class="text-center">Username</th>
+                                                <th class="text-center">Email</th>
+                                                <th class="text-center">Address</th>
+                                                <th class="text-center">City</th>
+                                                <th class="text-center">Zip</th>
+                                                <th class="text-center">Cardnumber</th>
+                                                <th class="text-center">Expmonth</th>
+                                                <th class="text-center">Cvv</th>
+                                                <th class="text-center">View</th>
+                                                <th class="text-center">Edit</th>
+                                                <th class="text-center">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($checkouts as $index => $checkout)
+                                                <tr>
+                                                    <td class="text-center">{{ $index + 1 }}</td>
+                                                    <td class="text-center">{{ $checkout->username }}</td>
+                                                    <td crechlass="text-center">{{ $checkout->email }}</td>
+                                                    <td class="text-center">{{ $checkout->address }}</td>
+                                                    <td class="text-center">{{ $checkout->city }}</td>
+                                                    <td class="text-center">{{ $checkout->zip }}</td>
+                                                    <td class="text-center">{{ $checkout->cardnumber }}</td>
+                                                    <td class="text-center">{{ $checkout->expmonth }}</td>
+                                                    <td class="text-center">{{ $checkout->cvv }}</td>
+                                                  
+                                                    <td class="text-center">
+                                                        <a href="{{route('checkout_view',$checkout->id)}}" class="btn btn-info btn-sm">View</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <form action="" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <a href="{{route('checkout_delete',$checkout->id)}}" class="btn btn-danger">Delete</a>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center p-5">
+                        <nav aria-label="Page justify-content-center">
+                            <ul class="pagination">
+                                <li>
+                                {!! $checkouts->links() !!}
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        </div>
-    </div>
-
-    <footer class="section bg-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Information</h6>
-                        <ul class="list-unstyled footer-link mt-4">
-                            <li><a href="">Pages</a></li>
-                            <li><a href="">Our Team</a></li>
-                            <li><a href="">Feuchers</a></li>
-                            <li><a href="">Pricing</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Ressources</h6>
-                        <ul class="list-unstyled footer-link mt-4">
-                            <li><a href="">Monitoring Grader </a></li>
-                            <li><a href="">Video Tutorial</a></li>
-                            <li><a href="">Term &amp; Service</a></li>
-                            <li><a href="">Zeeko API</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="">
-                        <h6 class="footer-heading text-uppercase text-white">Help</h6>
-                        <ul class="list-unstyled footer-link mt-4">
-                            <li><a href="">Sign Up </a></li>
-                            <li><a href="">Login</a></li>
-                            <li><a href="">Terms of Services</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-                <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-                </script>
+            <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
+                <!-- Include Bootstrap JS (optional) 
+                -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -16,6 +16,7 @@
     />
   </head>
   <body>
+    <!-- datafetch with searchbar -->
     @foreach ($books as $book )
     <main>
       <img src="{{asset($book->image)}}">
@@ -43,5 +44,6 @@
       </div>
     </main>
     @endforeach
+    <!-- search data display ended -->
   </body>
 </html>

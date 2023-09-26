@@ -11,7 +11,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="{{ asset('css/book.css') }}">
+   <link rel="sylesheet" href="">
     <title>Sign up Today!</title>
 </head>
 
@@ -54,24 +54,37 @@
             </div>
         </div>
     </nav>
+    <!--navbar End -->
+
+
     @if(Session::has('login_success'))
     <script>
-   swal("Well Done", "Login is Successfully", "login_success");
+    swal("Login Sucessfully", "you can add book detail", "success")
         </script>
     @endif
-    {{-- <img src="{{ asset(str_replace('public', 'storage', $book->image)) }}"> --}}
-    
-    <div class="overlay"></div>
-    <p class="logo">Online Book-store</p>
-    <div class="right-container">
-        <h4>Herbology 101</h4>
-        <p>Register Book to receive the detail of Book .</p>
-        <div class="button-sbmit">
-            <a href="bookdetail" class="btn btn-dark">Click here</a>
-        </div>
+   
+
+    <!-- session -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTD8LUaUciOGQLhONcz8QieUMWBm8ZmNv9uA&usqp=CAU" style="width:100%" height="30%">
+     <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOvA2089TTB1woJm_VVyT-i-PZIDDCSFxesw&usqp=CAU" width="80%" height="">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
     <script src="
-    https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js
-    "></script>
+    https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
         </body> 
         </html>
