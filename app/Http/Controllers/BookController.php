@@ -17,7 +17,7 @@ class BookController extends Controller
     $request->validate([
       'title' => 'required|min:5',
       'author' => 'required',
-      'description' => 'required|max:40',
+      'description' => 'required',
       'price' => 'required|numeric',
       'image' => 'required|image|mimes:png,jpg',
 
@@ -55,11 +55,10 @@ class BookController extends Controller
     if ($request->session()->has('user')) {
       $cart = new Book;
       $cart->user_id = $request->session()->get('user')['id'];
-      $cart->book_id = $request->product_id;
-      $cart->save();
+      $cart->book_id = $request->book_id;
 
     } else {
-      return view('project.login');
+      return view('login');
     }
   }
 
@@ -79,5 +78,6 @@ class BookController extends Controller
     $user_id = Session::get('user')['id'];
     return Cart::where('user_id', $user_id)->count();
   }
+  
   
 }

@@ -46,7 +46,7 @@ class RegistrationController extends Controller
       } else {
          $request->session()->put('user', $user);
          session()->flash('login_success');
-         return redirect()->to('http://127.0.0.1:8000/book');
+         return redirect()->to('http://127.0.0.1:8000/index');
       }
    }
 }
