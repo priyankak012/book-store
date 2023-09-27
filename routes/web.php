@@ -233,16 +233,16 @@ Route::get('checkout_show', [paginationcontroller::class, 'chekout_pagination'])
 Route::get('/convert-to-json', function () {
     return view('crud.checkout_show');
 });
-// Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-//     Route::get('/adminlogin', [AdminController::class, 'getLogin'])->name('adminLogin');
-//     Route::post('/adminlogin', [AdminController::class, 'postLogin'])->name('adminLoginPost');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('/adminlogin', [AdminController::class, 'getLogin'])->name('adminLogin');
+    Route::post('/adminlogin', [AdminController::class, 'postLogin'])->name('adminLoginPost');
 
-//     Route::group(['middleware' => 'adminauth'], function () {
-//         Route::get('/', function () {
-//             return view('crud.index');
-//         })->name('adminDashboard');
-//     });
-// });
+    Route::group(['middleware' => 'adminauth'], function () {
+        Route::get('/', function () {
+            return view('crud.index');
+        })->name('adminDashboard');
+    });
+});
 Route::get('admin.login', function () {
     return view('admin.loginauth');
 });
