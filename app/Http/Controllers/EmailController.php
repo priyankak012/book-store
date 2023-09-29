@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+
 
 class EmailController extends Controller
 {
@@ -13,9 +15,22 @@ class EmailController extends Controller
             'title' => 'Test Email From AllPHPTricks.com',
             'body' => 'This is the body of test email.'
         ];
-        
+
       Mail::to('skeypriyankak@gmail.com')->send(new SendMail($details));
 
         return dd('email send successfully !');
     }
+
+    public function sendEmail(Request $request)
+    {
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+
+        Mail::send('emails.email', ['email' => $email, 'phone' => $phone], function ($message) use ($email) {
+            $message->to($email)->subject('Subject of the email');
+        });
+
+        return  dd('success', 'Email sent successfully!');
+    }
+
 }

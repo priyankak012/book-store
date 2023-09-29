@@ -46,7 +46,7 @@
                     </li>
                 </ul>
                 <i class="fa" style="font-size:24px">&#xf07a;</i>
-              
+
                 <form class="d-flex">
                     @if (Session::has('user'))
                         <div class="collapse navbar-collapse " id="navbarNavDarkDropdown">
@@ -94,17 +94,18 @@
                     <p>{{ $checkoutdetails->address }}</p>
                     <p>{{ $checkoutdetails->zip }}</p>
                     <hr>
-                    <form class="row g-3" action="" method="post">
+                    <form class="row g-3" action="{{route('send.email')}}" method="post">
+                        @csrf
                         <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <label  class="form-label">Email</label>
+                            <input type="email" class="form-control"   name="email">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputPassword4" class="form-label">phone no </label>
-                            <input type="number" class="form-control" id="inputPassword4">
+                            <label  class="form-label">phone no </label>
+                            <input type="number" class="form-control" name="phone">
                         </div>
-
-                        <a href="success" class="btn btn-dark">Submit </a>
+                           <button class="btn btn-dark">Submit</button>
+                        {{-- <a href="success" class="btn btn-dark">Submit </a> --}}
                     </form>
     </section>
     </div>

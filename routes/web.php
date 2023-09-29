@@ -304,3 +304,9 @@ Route::get('success',function()
 });
 
 Route::get('send-email',[EmailController::class,'mailsend']);
+Route::post('email-check',[Emailcontroller::class,'sendEmail'])->name('send.email');
+Route::get('email-check',function()
+{
+     return view('emails.email');
+});
+
