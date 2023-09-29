@@ -51,6 +51,8 @@ Route::get('/registration', function () {
         return view('index')->name('index');
     });
 });
+
+// Route::post('registration',[registrationcontroller::class,'email']);
 Route::get('/login', function () {
     return view('login');
 });

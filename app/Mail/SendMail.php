@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Mail;
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
-    
+
     public $details;
 
     /**
@@ -55,10 +55,10 @@ class SendMail extends Mailable
         return [];
     }
 
-    // public function build()
-    // { 
-    //     return $this->subject('Subject of the Email')
-    //           ->view('mails.testmail');  
-    // }
-    
+    public function build()
+    {
+        return $this->subject('Subject of the Email')
+              ->view('mails.testmail');
+    }
+
 }

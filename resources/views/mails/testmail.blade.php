@@ -6,7 +6,8 @@
 <body>
     <h6> Mail </h6>
 
-    <h1>{{ $details['title'] }}</h1>
-    <p>{{ $details['body'] }}</p>
+    <h1>{{ $details }}</h1>
+    <p> thank you </p>
+    <p>{{ $details }}</p>
 </body>
 </html>

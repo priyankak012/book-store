@@ -19,24 +19,36 @@ class ForgetpasswordController extends Controller
 
     public function submitForgetPasswordForm(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             "email" => 'required|email|exists:registrations',
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $token = Str::random(64);
 
-        DB::table('password_reset_tokens')->insert([
-            'email' => $request->email,
-            'token' => $token,
-            'created_at' => Carbon::now(),
-        ]);
+        DB::beginTransaction();
 
-        Mail::send('emails.resetpassword', ['token' => $token], function ($message) use ($request) {
-            $message->to($request->email)->subject('Reset Password');
-        });
+        try {
+            DB::table('password_reset_tokens')->insert([
+                'email' => $request->email,
+                'token' => $token,
+                'created_at' => Carbon::now(),
+            ]);
 
-        // return back()->with('message', 'We have emailed your password reset link!');
-        return dd('click link');
+            Mail::send('emails.resetpassword', ['token' => $token], function ($message) use ($request) {
+                $message->to($request->email)->subject('Reset Password');
+            });
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with('error', 'Something went wrong while processing your request.');
+        }
+
+        return redirect()->route('password.request')->with('message', 'We have emailed your password reset link!');
     }
 
     public function showResetPasswordForm($token)

@@ -12,8 +12,8 @@ class EmailController extends Controller
     public function mailsend()
     {
         $details = [
-            'title' => 'Test Email From AllPHPTricks.com',
-            'body' => 'This is the body of test email.'
+            'title' => 'Online Book Store',
+            'body' => 'Thank you for the visit online-book-store website',
         ];
 
       Mail::to('skeypriyankak@gmail.com')->send(new SendMail($details));

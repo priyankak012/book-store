@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Auth\Events\Registered;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Console\View\Components\Alert;
+
 
 class RegistrationController extends Controller
 {
@@ -27,12 +29,15 @@ class RegistrationController extends Controller
          'password' => Hash::make($request->password)
       ]);
 
-      
-   
-      session()->flash('success', 'You have Successfully Registered');
-      return redirect('/login');
+      Mail::to($request->email)->send(new SendMail($request->email));
+
+      return  dd("registration email successdully");
+
+
+    //   session()->flash('success', 'You have Successfully Registered');
+    //   return redirect('/login');
    }
-   
+
 
    public function register(Request $request)
    {
@@ -63,4 +68,12 @@ class RegistrationController extends Controller
          return redirect()->to('http://127.0.0.1:8000/index');
       }
    }
+//    public function email(Request $request)
+//    {
+
+//        Mail::to($request->email)->send(new WelcomeMail());
+
+//         return "registration email successdully";
+//    }
+
 }
