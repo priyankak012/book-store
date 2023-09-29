@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/old-books-arranged-on-shelf-royalty-free-image-1572384534.jpg?crop=0.668xw:1.00xh;0,0&resize=1200:*');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-color:antiquewhite;
+}
+
+.overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    position:absolute;
+    font-size:45px;
+    color: #c23636;
+    border-bottom: solid 1px #1f1d1d;
+    top: 20%;
+    left:65%;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+.right-container {
+    position: absolute;
+    width: 60%;
+    top: 40%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-container h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 65px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.right-container p {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 60%;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.center-container {
+    width: 450px;
+    height: 600px;
+    background-color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(105, 108, 105, 0.3) 0px 5px 15px 0px;
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow: rgb(0,0,0) 0px 0px 15px 0px;
+}
+
+.center-container p {
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.modal-button
+{
+    margin: 3%;
+    color: cadetblue;
+    text-decoration: #1f1d1d;
+    size: 60%;
+
+}
+
+.button-sbmit{
+    margin:30px;
+    background-color:offwhite;
+    font-size:20px;
+    padding:20px 40px;
+    text-transform:capitalize;
+    cursor:pointer;
+    transform:all 0.3s;
+    position:relative;
+    font-style:italic;
+  }
+  button:before{
+    content:"";
+    position :absolute;
+    width:24px;
+    height:24px;
+    top:2%;
+      left:4%;
+    border-top:2px solid tomato;
+    border-left:2px solid tomato;
+    transition:all 0.25s;
+  }
+  button:hover:before ,button:hover:after{
+    width:80%;
+    height:95%;
+  }
+  button:after{
+    content:"";
+    position :absolute;
+    width:24px;
+    height:24px;
+    bottom:2%;
+      right:4%;
+    border-bottom:2px solid tomato;
+    border-right:2px solid tomato;
+    transition:all 0.30s;
+  }

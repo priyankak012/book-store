@@ -18,6 +18,7 @@ use App\Http\Controllers\paginationcontroller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\SecrchController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -88,7 +89,7 @@ Route::get('/cart', function () {
 
 /* ForgetpasswordCOntroller use for user authentication forgetpasword system*/
 
-Route::get('/resetpassword/{{token}}', [ForgetpasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::get('/resetpassword/{token}', [ForgetpasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('/resetpassword', [ForgetpasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 Route::get('forget-password', [ForgetpasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
 Route::post('forget-password', [ForgetpasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
@@ -96,10 +97,13 @@ Route::post('forget-password', [ForgetpasswordController::class, 'submitForgetPa
 Route::get('mail', function () {
     return view('mails.testmail');
 });
+Route::get('resetpassword', function () {
+    return view('emails.resetpassword');
+});
 // Route::get('resetpassword', function () {
 //     $recipientEmail = 'priyabpccs@gmail.com';
 //     $details = [
-        
+
 //         'subject' => 'Reset password',
 //         'message' => 'change toy password ',
 //     ];
@@ -110,9 +114,6 @@ Route::get('mail', function () {
 // Route::get('send-email', function () {
 //     return view('forgetpassword');
 // });
-Route::get('resetpassword', function () {
-    return view('resetpassword');
-});
 Route::get('imagedetail ', function () {
     return view('imagedetail');
 });
@@ -259,7 +260,7 @@ Route::get('exm', function () {
     return view('crud.exm');
 });
 Route::get('crud.index', [BookManagerController::class, 'data_count']);
-// Route::get('book_show',[FilterController::class,'book_filter']);    
+// Route::get('book_show',[FilterController::class,'book_filter']);
 Route::get(' crud.bookdetail', function () {
     return view('crud.bookdetail');
 });
@@ -300,4 +301,6 @@ Route::get('checkoutdetail/{id}', [OrdermanagmentController::class, 'datashow'])
 Route::get('success',function()
 {
     return view('Success');
-}); 
+});
+
+Route::get('send-email',[EmailController::class,'mailsend']);

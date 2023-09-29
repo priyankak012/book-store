@@ -14,7 +14,7 @@ class ForgetpasswordController extends Controller
 {
     public function showForgetPasswordForm()
     {
-        return view('resetpassword');
+        return view('emails.resetpassword');
     }
 
     public function submitForgetPasswordForm(Request $request)
@@ -35,12 +35,13 @@ class ForgetpasswordController extends Controller
             $message->to($request->email)->subject('Reset Password');
         });
 
-        return back()->with('message', 'We have emailed your password reset link!');
+        // return back()->with('message', 'We have emailed your password reset link!');
+        return dd('click link');
     }
 
     public function showResetPasswordForm($token)
     {
-        
+
         $tokenRecord = DB::table('password_reset_tokens')
             ->where('token', $token)
             ->first();
@@ -49,7 +50,7 @@ class ForgetpasswordController extends Controller
             return redirect('/login')->with('error', 'Invalid token.');
         }
 
-        return view('resetpassword', ['token' => $token]);
+        return view('emails.resetpassword', ['token' => $token]);
     }
 
     public function submitResetPasswordForm(Request $request)
@@ -59,7 +60,7 @@ class ForgetpasswordController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-       
+
         $tokenRecord = DB::table('password_reset_tokens')
             ->where([
                 'email' => $request->email,

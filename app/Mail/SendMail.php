@@ -41,7 +41,7 @@ class SendMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mails.testmail',
         );
     }
 
@@ -55,10 +55,10 @@ class SendMail extends Mailable
         return [];
     }
 
-    public function build()
-    { 
-        return $this->subject('Subject of the Email')
-              ->view('mails.testmail');  
-    }
+    // public function build()
+    // { 
+    //     return $this->subject('Subject of the Email')
+    //           ->view('mails.testmail');  
+    // }
     
 }
