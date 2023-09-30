@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                         <li><a class="dropdown-item" href="admin.login">Admin</a></li>
                         <li><a class="dropdown-item" href="login">User</a></li>
-            
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -60,50 +60,48 @@
         </script>
         @endif
 
-<!-- login form -->
-    <div class="form">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-xl-9 mx-auto">
-                    <div class="card card-signin flex-row my-5">
-                        <div class="card-img-left d-none d-md-flex">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Login</h5>
-                            <form action="{{route('login')}}" method="post">
-                                @csrf
-                                <div class="form-label-group">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                                     value="{{old('email')}}">
+    <!-- login form -->
+<div class="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                    <div class="card-img-left d-none d-md-flex">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Login</h5>
+                        <form action="{{ route('login') }}" method="post">
+                            @csrf
+                           
+                            <div class="form-label-group">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
                                 <label for="email">Email</label>
                                 @error('email')
-                                <span class="text-danger">{{ $message}}</span>
-                                    
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                                </div>
-                                <div class="form-label-group">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
-                                        value="">
-                                    <label for="password">password</label>
-                                    @error('password')
-                                        <span class="text-danger">{{$message}}</span>
-                                    @enderror
-                                </div>
-                                <button  class="btn btn-dark"  type="submit" name="submit"> Login </button><br>
-                                <p class="p-1"> if you doesn't have  registration !<i> <a href="registration"> click here </i> </a></p>
-                                <p class="float-end">Forget  password ? <a href="resetpassword">click here !</a> </p>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
+                                <label for="password">Password</label>
+                                @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <button class="btn btn-dark" type="submit" name="submit">Login</button><br>
+                            <p class="p-1">If you don't have registration! <i><a href="registration">Click here</a></i></p>
+                            <p class="float-end">Forgot password? <a href="resetpassword">Click here!</a></p>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
     <!-- login form ended -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js
 "></script>
 </body>
     </html>
-                            
-  
+

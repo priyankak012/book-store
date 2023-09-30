@@ -317,7 +317,7 @@
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-header">Active Books
-                                    <img src="{{ asset('chart 1.png') }}" style="margin-top: 50%" width="45%">
+                                    <img src="{{asset('css/image/bar-graph.png') }}" style="margin-top: 60%" width="65%">
                                 </div>
                             </div>
                         </div>

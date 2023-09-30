@@ -8,7 +8,12 @@ use Illuminate\Contracts\Auth\Authenticatable;
 
 class admin extends Model
 {
-   
-    protected $table = 'admins';
-    protected $guarded = array();
+
+    protected $fillable=[
+        'name',
+        'email',
+        'password',
+
+       ];
+
 }

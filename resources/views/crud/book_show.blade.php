@@ -58,8 +58,7 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="p-0 btn">
                                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPJ8sOOpnrHjIFC1opZt4JKdXYvi_5OEEl4A&usqp=CAU" height="70%" width="20%">
-                                    </a> 
-                                 
+                                    </a>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +210,7 @@
                             <p> Total : {{ $books->total()}}</p>
                             <p> Current page : {{$books->count()}}</p>
                         </div>
-                        
+
                       </nav>
                     <div class="card-header bg-primary text-white">
                         <h5 class="card-title">Active Books</h5>
@@ -245,11 +244,11 @@
                                             <img src="{{asset($book->image)}}" width="30%" height="40%">
                                             </a></td>
                                             <td><a href= "{{route('crud.view',$book->id)}}" class="btn btn-dark">View</a></td>
-                                            
+
                                             <form action="{{route('crud_updates',$book->id)}}" method="POST">
                                                 @csrf
-                                                @method('PUT') 
-                                                
+                                                @method('PUT')
+
                                                 <td><a href="{{ route('crud_edit', $book->id) }}" class="btn btn-primary">Edit</a></td>
                                                 <td> <a href="{{route('crud_delete',$book->id)}}" class="btn btn-danger">Delete</a></td>
                                             </form>
@@ -263,7 +262,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="d-flex justify-content-center p-5">
             <nav aria-label="Page justify-content-center">
               <ul class="pagination">
@@ -274,9 +273,13 @@
     </div>
         </div>
 
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-  
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
+
+        <!-- Include Bootstrap JS (optional) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 

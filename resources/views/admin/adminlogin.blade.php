@@ -17,35 +17,27 @@
       <div class="col-left">
         <div class="login-text">
           <h2>Welcome Back</h2>
-          <p>Create your account.<br>It's totally free.</p>
+         Create your account.<br>It's totally free.</p>
           <a class="btn" href="">Sign Up</a>
         </div>
       </div>
       <div class="col-right">
         <div class="login-form">
           <h2>Login</h2>
-          <form action="{{route('adminLoginPost')}}" method="post">
+          <form action="{{route('admin.login')}}" method="post">
             @csrf
-            <p>
                  <label>Email id: </label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" value="{{old('email')}}">
                 @error('email')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
-            </p>
-            <p>
               <label>Password</label>
               <input type="password" placeholder="Password" name="password">
               @error('password')
               <span class="text-danger">{{ $message }}</span>
           @enderror
-            </p>
-            <p>
               <button type="submit" name="submit">Click here </button>
-            </p>
-            <p>
               <a href="resetpassword">Forget Password?</a>
-            </p>
           </form>
         </div>
       </div>

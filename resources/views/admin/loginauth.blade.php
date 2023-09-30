@@ -17,42 +17,48 @@
       <div class="col-left">
         <div class="login-text">
           <h2>Welcome Back</h2>
-          <p>Create your account.<br>It's totally free.</p>
+           <p> Create your account.<br>It's totally free.</p>
           <a class="btn" href="">Sign Up</a>
         </div>
       </div>
       <div class="col-right">
         <div class="login-form">
           <h2>Login</h2>
-          <form action="{{route('adminLoginPost')}}" method="post">
+          <form action="{{route('admin.register')}}" method="post">
             @csrf
-            <p>
+
               <label>Username</label>
-              <input type="text" class="form-control" name="name">
+              <input type="text" class="form-control" name="name" value="{{old('name')}}">
               @error('name')
               <span class="text-danger">{{ $message }}</span>
           @enderror
-            </p>
-            <p>
+
+
                 <label>Email id: </label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" value="{{old('email')}}">
                 @error('email')
                 <span class="text-danger">{{ $message }}</span>
             @enderror
-            </p>
-            <p>
+
+
               <label>Password</label>
               <input type="password" placeholder="Password" name="password">
               @error('password')
               <span class="text-danger">{{ $message }}</span>
           @enderror
-            </p>
-            <p>
+
+          <label>Confirm_Password</label>
+          <input type="password" placeholder="Password" name="password_confirmation">
+          @error( 'password_confirmation')
+          <span class="text-danger">{{ $message }}</span>
+      @enderror
+
+
               <button type="submit" name="submit">Click here </button>
-            </p>
-            <p>
-              <a href="resetpassword">Forget Password?</a>
-            </p>
+
+
+              <a href="admin.login">already have account</a>
+
           </form>
         </div>
       </div>

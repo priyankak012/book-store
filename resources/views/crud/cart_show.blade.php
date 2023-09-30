@@ -65,8 +65,8 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="p-0 btn">
                                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPJ8sOOpnrHjIFC1opZt4JKdXYvi_5OEEl4A&usqp=CAU" height="70%" width="20%">
-                                    </a> 
-                                 
+                                    </a>
+
                                     </div>
                                 </div>
                             </div>

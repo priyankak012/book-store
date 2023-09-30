@@ -239,12 +239,8 @@ Route::get('/convert-to-json', function () {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/adminlogin', [AdminController::class, 'getLogin'])->name('adminLogin');
     Route::post('/adminlogin', [AdminController::class, 'postLogin'])->name('adminLoginPost');
+    Route::get('admin.login',[admincontroller::class,'adminlogin'])->name('admin.loginform');
 
-    Route::group(['middleware' => 'adminauth'], function () {
-        Route::get('/', function () {
-            return view('crud.index');
-        })->name('adminDashboard');
-    });
 });
 Route::get('admin.login', function () {
     return view('admin.loginauth');
@@ -262,7 +258,6 @@ Route::get('exm', function () {
     return view('crud.exm');
 });
 Route::get('crud.index', [BookManagerController::class, 'data_count']);
-// Route::get('book_show',[FilterController::class,'book_filter']);
 Route::get(' crud.bookdetail', function () {
     return view('crud.bookdetail');
 });
@@ -281,23 +276,20 @@ Route::get('checkoutdetail', function () {
 Route::get('checkoutdetail', [AdminmanageController::class, 'checkoutdetail']);
 
 
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/admin.login', [AdminAuthController::class, 'getlogin'])->name('adminLogin');
-    Route::post('/admin.login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
-
-    Route::group(['middleware' => 'adminauth'], function () {
-        Route::get('/', function () {
-            return view('welcome');
-        })->name('adminDashboard');
-    });
+Route::prefix('admin')->group(function () {
+    Route::get('/admin.registration', [AdminAuthController::class, 'getLogin'])->name('admin.registration'); // Show login form
+    Route::post('/admin.login', [AdminAuthController::class, 'postLogin'])->name('admin.login'); // Handle login form submission
+    Route::post('/admin.register', [AdminAuthController::class, 'postRegister'])->name('admin.register'); // Handle registration form submission
+    Route::post('/logout', [AdminAuthController::class, 'adminLogout'])->name('admin.logout'); // Handle logout
+    // ... other admin routes
 });
-Route::get('adminauthlogin', function () {
+
+Route::get('admin.registration', function () {
     return view('admin.loginauth');
 });
 Route::get('admin.login', function () {
     return view('admin.adminlogin');
-});
+})->name('admin.login');
 Route::get('checkoutdetail/{id}', [OrdermanagmentController::class, 'datashow']);
 
 Route::get('success',function()
