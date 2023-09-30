@@ -281,7 +281,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/admin.login', [AdminAuthController::class, 'postLogin'])->name('admin.login'); // Handle login form submission
     Route::post('/admin.register', [AdminAuthController::class, 'postRegister'])->name('admin.register'); // Handle registration form submission
     Route::post('/logout', [AdminAuthController::class, 'adminLogout'])->name('admin.logout'); // Handle logout
-    // ... other admin routes
+
 });
 
 Route::get('admin.registration', function () {

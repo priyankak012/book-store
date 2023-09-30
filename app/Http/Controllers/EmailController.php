@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EmailController extends Controller
 {
 
-    public function mailsend()
+    public function mailsend(Request $request)
     {
         $details = [
             'title' => 'Online Book Store',
@@ -18,7 +18,7 @@ class EmailController extends Controller
 
       Mail::to('skeypriyankak@gmail.com')->send(new SendMail($details));
 
-        return dd('email send successfully !');
+       return redirect('login');
     }
 
     public function sendEmail(Request $request)
@@ -30,7 +30,7 @@ class EmailController extends Controller
             $message->to($email)->subject('Subject of the email');
         });
 
-        return  dd('success', 'Email sent successfully!');
+        return  redirect('success');
     }
 
 }
