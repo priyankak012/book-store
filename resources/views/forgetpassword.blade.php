@@ -64,7 +64,7 @@
 
     <div class="mainDiv mb-1">
         <div class="cardStyle">
-            <form action="{{ route('forget.password.post') }}" method="post">
+            <form action="{{route('forgetpassword.post')}}" method="post">
                 @csrf
 
                 <img src="" id="signupLogo" />
@@ -97,10 +97,8 @@
                 </div>
 
                 <div class="buttonWrapper">
-                    <button type="submit" id="submitButton" onclick="validateSignupForm()"
-                        class="submitButton pure-button pure-button-primary">
-                        <span>Continue</span>
-                        <span id="loader"></span>
+                    <button type="submit">
+                        Click
                     </button>
                 </div>
 

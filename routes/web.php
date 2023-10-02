@@ -91,33 +91,31 @@ Route::get('/cart', function () {
 
 /* ForgetpasswordCOntroller use for user authentication forgetpasword system*/
 
-Route::get('/resetpassword/{token}', [ForgetpasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
-Route::post('/resetpassword', [ForgetpasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
-Route::get('forget-password', [ForgetpasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forget-password', [ForgetpasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::post('/resetpassword', [ForgetpasswordController::class, 'sendemailforgetpassword'])->name('reset.password.post');
+Route::get('/resetforgetpassword',[forgetpasswordcontroller::class,'senddisplayforgetpassword'])->name('forgetpassword');
+Route::post('forgetpassowrd',[forgetpasswordcontroller::class,'submitResetPasswordForm'])->name('forgetpassword.post');
 
+Route::get('forgetpassowrd',function()
+{
+    return view('forgetpassword');
+});
+Route::get('/resetforgetpassword',function()
+{
+    return view('mails.forgetpassword');
+});
 Route::get('mail', function () {
     return view('mails.testmail');
 });
 Route::get('resetpassword', function () {
     return view('emails.resetpassword');
 });
-// Route::get('resetpassword', function () {
-//     $recipientEmail = 'priyabpccs@gmail.com';
-//     $details = [
 
-//         'subject' => 'Reset password',
-//         'message' => 'change toy password ',
-//     ];
-//     Mail::to($recipientEmail)->send(new SendMail($details));
-
-//     dd("Email is Sent.");
-// });
-// Route::get('send-email', function () {
-//     return view('forgetpassword');
-// });
 Route::get('imagedetail ', function () {
     return view('imagedetail');
+});
+Route::get('emailforgetpassword',function()
+{
+    return view('mails.emailforgetpassword');
 });
 
 
@@ -297,4 +295,3 @@ Route::get('email-check',function()
 {
      return view('emails.email');
 });
-
