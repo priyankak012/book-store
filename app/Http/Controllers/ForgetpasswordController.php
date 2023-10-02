@@ -38,10 +38,11 @@ class ForgetpasswordController extends Controller
                 'created_at' => Carbon::now(),
             ]);
 
-            Mail::send('emails.resetpassword', ['token' => $token], function ($message) use ($request) {
-                $message->to($request->email)->subject('Reset Password');
+            Mail::send('emails.resetpassword', ['token' => $token ,'email' => $email], function ($message) use ($request) {
+                $message->to($email)->subject('Reset Password');
             });
 
+        
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

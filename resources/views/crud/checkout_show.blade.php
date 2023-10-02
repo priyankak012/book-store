@@ -245,7 +245,7 @@
                                                     <td class="text-center">{{ $checkout->cardnumber }}</td>
                                                     <td class="text-center">{{ $checkout->expmonth }}</td>
                                                     <td class="text-center">{{ $checkout->cvv }}</td>
-                                                  
+
                                                     <td class="text-center">
                                                         <a href="{{route('checkout_view',$checkout->id)}}" class="btn btn-info btn-sm">View</a>
                                                     </td>
@@ -280,7 +280,7 @@
             </div>
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
             <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-                <!-- Include Bootstrap JS (optional) 
+                <!-- Include Bootstrap JS (optional)
                 -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

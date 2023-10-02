@@ -221,23 +221,23 @@
                                                        <label for="title" class="form-label">Username:</label>
                                                         <input type="text" class="form-control" name="title"
                                                             value="{{ $registrations->username }}">
-    
+
                                                         <div class="mb-1">
                                                             <label for="author" class="form-label">Email:</label>
                                                             <input type="email" class="form-control" name="author"
                                                                 value="{{ $registrations->email }}">
-    
+
                                                         </div>
                                                         <div class="mb-1">
                                                             <label for="description" class="form-label">Phone:</label>s
                                                             <input type="phone" name="description" class="form-control"
                                                                 value="{{ $registrations->phone }}">
-    
+
                                                         </div>
                                                         <div class="btn-submit  p-1">
                                                             <a href="{{ route('show_data') }}" class="btn btn-dark"
                                                                 type="submit">Back</a>
-    
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -249,9 +249,14 @@
                         </div>
                     </div>
                 </div>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-  
+
+                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
+
+                  <!-- Include Bootstrap JS (optional) -->
+                  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

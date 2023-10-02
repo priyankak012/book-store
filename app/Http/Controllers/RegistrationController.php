@@ -31,7 +31,7 @@ class RegistrationController extends Controller
 
       Mail::to($request->email)->send(new SendMail($request->email));
 
-      return  dd("registration email successdully");
+      return redirect('login');
 
 
     //   session()->flash('success', 'You have Successfully Registered');

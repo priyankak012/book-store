@@ -56,8 +56,8 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="p-0 btn">
                                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPJ8sOOpnrHjIFC1opZt4JKdXYvi_5OEEl4A&usqp=CAU" height="70%" width="20%">
-                                    </a> 
-                                 
+                                    </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -137,11 +137,12 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="detail_show">
+                                        <a href="checkout_show">
                                             <i class="metismenu-icon">
-                                            </i>Details
+                                            </i>Checout detail
                                         </a>
                                     </li>
+
                                     <li>
                                         <a href="book_show">
                                             <i class="metismenu-icon">
@@ -247,12 +248,12 @@
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
-                        
+
                                                 <div class="btn-submit  p-1">
                                                     <button class="btn btn-dark" type="submit"> Click here </button>
                                                 </div>
                                             </form>
-                                              
+
                                         </tr>
                                     </tbody>
                                 </table>
@@ -269,15 +270,14 @@
             {{-- {!! $details->links() !!} --}}
           </ul>
         </nav>
-      </div>     
+      </div>
     </div>
       <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
       <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-    
+
         <!-- Include Bootstrap JS (optional) -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
     </html>
-    

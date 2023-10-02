@@ -132,16 +132,10 @@ Route::get('crud.edit/{id}', [BookManagerController::class, 'edit'])->name('crud
 Route::get('books/{id}', [BookManagerController::class, 'destroy'])->name('crud_delete');
 Route::get('crud.exam', [BookManagerController::class, 'show'])->name('show_data');
 Route::get('crud.update/{id}', [BookManagerController::class, 'update'])->name('update_get');
-// Route::get('crud.index',[BookManagerController::class,'data_count']);
 
 Route::get('delete', function () {
     return view('crud.delete');
 });
-
-Route::get('exam', function () {
-    return view('crud.exam');
-});
-
 /* Use ProfileControlller for use in User profile*/
 
 Route::get('profile', [ProfileController::class, 'create'])->name('profile');

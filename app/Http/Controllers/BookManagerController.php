@@ -42,7 +42,7 @@ class BookManagerController extends Controller
   {
 
     $book = Book::where('id', $id)->first();
-    return view('crud.update', ['books' => $book]);
+    return view('crud.update', ['books' => $book])->with('');
   }
 
   public function update(Request $request, $id)
@@ -83,8 +83,8 @@ class BookManagerController extends Controller
     $order_total = Order::count();
     $registration_total = Registration::count();
     $checkout_total = Checkout::count();
-   
-    
+
+
     return view('crud.index', compact('book_totals', 'order_total', 'registration_total','checkout_total'));
   }
 }

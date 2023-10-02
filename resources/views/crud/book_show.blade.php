@@ -138,9 +138,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="detail_show">
+                                        <a href="checkout_show">
                                             <i class="metismenu-icon">
-                                            </i>Details
+                                            </i>Checout detail
                                         </a>
                                     </li>
                                     <li>

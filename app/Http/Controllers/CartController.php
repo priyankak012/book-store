@@ -15,28 +15,33 @@ use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
-    public function cartlist()
+    public function cartlist(Request $request)
     {
-        $user_id = Session::get('user')['id'];
-        $books = DB::table('carts')
-            ->join('books', 'carts.book_id', '=', 'books.id')
-            // ->where('cart.user_id'.$user_id)
-            ->select('books.*', 'carts.id as cart_id')
-            ->get();
+        if ($request->session()->has('user')) {
+            $user_id = $request->session()->get('user')['id'];
+            $books = DB::table('carts')
+                ->join('books', 'carts.book_id', '=', 'books.id')
+                ->where('carts.user_id', $user_id)
+                ->select('books.*', 'carts.id as cart_id')
+                ->get();
+
+            return view('cartlist', ['books' => $books]);
+        } else {
 
 
-        return view('cartlist', ['books' => $books]);
-
+            return view('login');
+        }
     }
+
 
     public function removecart($id)
     {
         $removecart = Cart::where('id',$id)->first();
-        $removecart->delete(); 
+        $removecart->delete();
 
         session()->flash('Remove_cart');
        return redirect()->route('cartlist');
-       
+
     }
     public function ordernow(Request $request)
     {
@@ -46,18 +51,18 @@ class CartController extends Controller
             ->join('books', 'carts.book_id', '=', 'books.id')
             ->select('books*.', 'carts.id as cart_id')
             ->sum('books.price');
-            
+
         return view('order', ['total' => $total]);
     }
 
-    
+
     public function orderplace(Request $request)
     {
 
         $request->validate([
             'address'=> 'required',
             'payment' =>'required',
-            
+
         ]);
 
         $user_id = Session::get('user')['id'];

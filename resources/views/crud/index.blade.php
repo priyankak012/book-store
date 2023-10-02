@@ -156,21 +156,15 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="detail_show">
+                                        <a href="checkout_show">
                                             <i class="metismenu-icon">
-                                            </i>Details
+                                            </i>CheckOut
                                         </a>
                                     </li>
                                     <li>
                                         <a href="book_show">
                                             <i class="metismenu-icon">
                                             </i>Books
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="checkout_show">
-                                            <i class="metismenu-icon">
-                                            </i>Check out
                                         </a>
                                     </li>
                                 </ul>
@@ -317,7 +311,8 @@
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-header">Active Books
-                                    <img src="{{asset('css/image/bar-graph.png') }}" style="margin-top: 60%" width="65%">
+                                    <img src="{{ asset('css/image/bar-graph.png') }}" style="margin-top: 60%"
+                                        width="65%">
                                 </div>
                             </div>
                         </div>
@@ -376,8 +371,8 @@
             </div>
         </div>
     </footer>
-                <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-                </script>
+    <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
+    </script>
 </body>
 
 </html>

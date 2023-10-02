@@ -203,6 +203,7 @@
                             <div class="card-header bg-primary text-white">
                                 <h5 class="card-title">Active Books</h5>
                             </div>
+                            <p> Total : {{$profiles->total()}}</p>
                             <nav class="navbar navbar-light bg-light">
                                 <div class="container-fluid">
                             <form class="d-flex">
@@ -210,6 +211,7 @@
                               <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                                 </div>
+
                             </nav>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -266,7 +268,7 @@
             </div>
             <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
             <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-                <!-- Include Bootstrap JS (optional) 
+                <!-- Include Bootstrap JS (optional)
                 -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

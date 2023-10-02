@@ -56,8 +56,8 @@
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         class="p-0 btn">
                                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPJ8sOOpnrHjIFC1opZt4JKdXYvi_5OEEl4A&usqp=CAU" height="70%" width="20%">
-                                    </a> 
-                                 
+                                    </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -137,9 +137,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="detail_show">
+                                        <a href="checkout_show">
                                             <i class="metismenu-icon">
-                                            </i>Details
+                                            </i>Checout detail
                                         </a>
                                     </li>
                                     <li>
@@ -214,7 +214,7 @@
                                 <table class="table table-bordered table-striped">
                                     <thead class="thead-dark">
                                         <tr>
-                                            
+
                                             <th class="text-center">Number</th>
                                             <th>Address</th>
                                             <th class="text-center">Pincode</th>
@@ -262,18 +262,17 @@
     <div class="d-flex justify-content-center p-55">
         <nav aria-label="Page justify-content-center">
           <ul class="pagination">
-         
+
           </ul>
         </nav>
-      </div>     
+      </div>
     </div>
       <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
       <script type="text/javascript" src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js">
-    
+
         <!-- Include Bootstrap JS (optional) -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
     </html>
-    

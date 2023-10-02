@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      
+
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 </head>
 
@@ -78,17 +78,17 @@
                     <div class="card">
                         <a href="{{ route('imagedetail', ['id' => $book['id']]) }}">
                             <img src="{{ asset($book->image) }}" height="60%" width="40%">
-                        </a>            
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $book->title }}</h5>
                             <p class="card-text">{{ $book->description }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <label for="book-{{ $book->id }}-like" class="like-icon-div-child">
-                                  
-                                    
+
+
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-fill"></i>
-                                </label>  
+                                </label>
                                 <form action="{{ route('cartlist') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="book_id" value="{{ $book->id }}">
