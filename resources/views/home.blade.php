@@ -10,7 +10,6 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <title>Book Store</title>
 </head>
-<body>
   <!-- Navbar -->
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,7 +64,7 @@
                   <div class="carousel-item active">
                     <img src="https://veronicalanebooks.com/wp-content/uploads/2021/01/kNb7RVMWiA-600x400.jpg" class="" alt="..." style="height:10%" width="40%">
                     <div class="text-center">
-                    <i class="text-light">Children’s literature comprises those books written and published for young people who are not yet interested in adult literature or who may not possess the reading skills or developmental understandings necessary for its perusal.</i>
+                    <i class="text-light">Children.s literature comprises those books written and published for young people who are not yet interested in adult literature or who may not possess the reading skills or developmental understandings necessary for its perusal.</i>
                     </div>
                   </div>
                   <div class="carousel-item">
@@ -125,6 +124,7 @@
       <a href="detail" class="btn btn-outline-primary">Go somewhere</a>
     </div>
   </div>
+</div>
 </section>
 
 <!-- End section -->
@@ -166,7 +166,6 @@
       </div>
       <div class="card-price">₹1109</div>
     </div>
-    
     </div>
 
 </section>
@@ -211,4 +210,3 @@
 
 </body>
     </html>
- 

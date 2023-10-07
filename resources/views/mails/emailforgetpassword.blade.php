@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="form-group">
-        <a href="{{route('forgetpassword')}}" class="btn btn-dark">Reset Password </a>
+        <a href="{{route('forgetpassword.post')}}" class="btn btn-dark">Reset Password </a>
     </div>
 
 </body>

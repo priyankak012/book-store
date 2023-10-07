@@ -69,6 +69,44 @@
         </div>
     </nav>
    <!-- end navbar -->
+   <!-- Carousel Image slidebar -->
+   <section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top:3%">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner bg-dark">
+          <div class="carousel-item active">
+            <img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2022/01/fantasy.jpg" class="" alt="..." style="height:20%" width="40%">
+            <div class="text-center">
+            <i class="text-light">Children.s literature comprises those books written and published for young people who are not yet interested in adult literature or who may not possess the reading skills or developmental understandings necessary for its perusal.</i>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2022/01/gone_girl_books_fb.jpg" class="" alt="..."  style="height:10%" width="40%">
+            <div class="text-center">
+            <i class="text-light">Cookbooks are a collection of recipes, instructions, and information about the preparation and serving of foods. A cookbook is also a chronicle and treasury of the fine art of cooking which would otherwise be lost. Cookbooks may be written by individual authors, who may be chefs, cooking teachers, or other food writers; they may be written by collectives, or they may be anonymous. They may be addressed to home cooks, professional restaurant cooks, institutional cooks, or more specialized audiences.</i>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUS_F3RJAbjRBlEFhbPwT9jDsHQ7CpmhUhCw&usqp=CAU" class="" alt="..."  style="height:10%" width="40%">
+            <div class="text-center">
+            <i class="text-light">Fiction implies the inventive construction of an imaginary world and, most commonly, its fictionality is publicly acknowledged. Hence, its audience typically expects it to deviate in some ways from the real world rather than presenting only characters who are actual people or portrayals that are factually true.</i>
+            </div>
+          </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</section><br><br><br>
+<!-- Image slider Ended -->
 
    <!-- fetch data  display -->
     <div class="container mt-5">
@@ -104,6 +142,43 @@
             </div>
     </div>
 <!-- end data -->
+
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-left col-md-4 col-sm-6">
+      <p class="about">
+        <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
+        ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
+      </p>
+    </div>
+    <div class="footer-center col-md-4 col-sm-6">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span> Street name and number</span> City, Country</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p> (+00) 0000 000 000</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#"> office@company.com</a></p>
+      </div>
+    </div>
+    <div class="footer-right col-md-4 col-sm-6">
+      <p class="menu">
+        <a href="#"> Home</a> |
+        <a href="#"> About</a> |
+        <a href="#"> Services</a> |
+        <a href="#"> Portfolio</a> |
+        <a href="#"> News</a> |
+        <a href="#"> Contact</a>
+      </p>
+      <p class="name"> Company Name &copy; 2016</p>
+    </div>
+  </footer>
+  <!-- end footer -->
+
 <script>
 const likeIcon = document.querySelector('.like-icon-div-child');
 

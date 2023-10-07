@@ -1,59 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700;800;900&display=swap');
+/* cartlist.css */
 
 body {
-    background-color: lightgray;
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
 }
 
-* {
-    padding: 0;
-    margin: 0;
+.panel {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
-:root {
-    font-size: 16px;
-    --heading-color: hsl(0, 0%, 7%);
-    --date-text-color: hsl(0, 0%, 51%);
-    --previous-price-text-color: hsl(0, 98%, 44%);
-    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
-    --liked-heart-icon-color: hsl(0, 98%, 44%);
-    --heart-icon-color: whitesmoke;
-}
-
-.container input {
-    display: none;
-}
-
-.container {
-    max-width: 100em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-content: flex-start;
-    margin: auto;
-    min-height: 30em;
-    padding: 3em 1em 1em 1em;
-    box-sizing: border-box;
-}
-
-.card-div {
-    width: 20em;
-    min-height: 20em;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    background-color: grey;
-    margin: 0.6em;
-    box-sizing: border-box;
+.card {
+    margin: 30px;
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.card-header {
+    background-color: #050f1a;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
 }
 
 /* Rest of your CSS remains unchanged */

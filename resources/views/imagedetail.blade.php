@@ -9,6 +9,10 @@
 </head>
 
 <body>
+    <!-- nabar -->
+
+
+    <!-- end navbar -->
     <!-- Imagedetail -->
     <div class="card">
         <img src="{{ asset($books->image) }}" class="card-img">
