@@ -34,8 +34,6 @@ class ForgetpasswordController extends Controller
         return  dd('success');
     }
 
-
-
     public function submitResetPasswordForm(Request $request)
     {
         $request->validate([
@@ -54,5 +52,5 @@ class ForgetpasswordController extends Controller
 
         return redirect('/login')->with('message', 'Your password has been changed!');
     }
-   
+
 }
